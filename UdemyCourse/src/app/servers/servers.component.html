@@ -1,6 +1,12 @@
 <h3>Servers Component</h3>
+
 <label>Server Name</label>
 <input type="text" class="form-control" (input)="onUpdateServerName($event)"><br>     <!--Event Binding-->
+<p>{{serverName}}</p>
+
+
+<label>Server Name</label>
+<input type="text" class="form-control" [(ngModel)]="serverName"><br>     <!--Two way Binding Binding-->
 <p>{{serverName}}</p>
 
 <!--Property Binding and Event Binding Respectively-->
@@ -13,4 +19,16 @@
 
 <p>{{serverCreationStatus}}</p>
 
+
+<p *ngIf="serverCreated; else noServer">                     <!--ngIf Else Directive-->
+  This will display only if button is clicked
+</p>
+
+<ng-template #noServer>                     <!--local reference-->
+  <p>NO Button is Clicked</p>
+</ng-template>
+
+<app-server></app-server>
+<app-server></app-server>
+<app-server></app-server>
 <app-server></app-server>
