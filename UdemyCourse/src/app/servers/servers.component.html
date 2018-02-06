@@ -1,0 +1,16 @@
+<h3>Servers Component</h3>
+<label>Server Name</label>
+<input type="text" class="form-control" (input)="onUpdateServerName($event)"><br>     <!--Event Binding-->
+<p>{{serverName}}</p>
+
+<!--Property Binding and Event Binding Respectively-->
+<button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Add Server</button>
+
+
+<p>{{allowNewServer}}</p>   <!--allowNewServer as String Interpolation-->
+
+<p [innerText] ="allowNewServer"></p>  <!--allowNewServer as Property Binding-->
+
+<p>{{serverCreationStatus}}</p>
+
+<app-server></app-server>
