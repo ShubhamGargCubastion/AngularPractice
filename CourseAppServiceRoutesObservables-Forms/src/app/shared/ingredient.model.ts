@@ -1,12 +1,12 @@
 export class Ingredient {
-  /*public ingredientName: string;
+  /*public name: string;
   public amount: number;
 
   constructor(name: string, amount: number) {
-    this.ingredientName = name;
+    this.name = name;
     this.amount = amount;
   }*/
       // OR
-  constructor(public ingredientName: string, public amount: number) { }
+  constructor(public name: string, public amount: number) { }
 
 }
