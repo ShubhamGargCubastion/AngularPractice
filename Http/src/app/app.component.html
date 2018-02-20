@@ -1,11 +1,21 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
-      <input type="text" #serverName>
-      <button class="btn btn-primary" (click)="onAddServer(serverName.value)">Add Server</button>
+      <label for="id">ID</label>
+      <input type="number" id="id" class="form-control" #id>
+      <label for="name">Name</label>
+      <input type="text" id="name" class="form-control" #serverName>
+      <label for="capacity">Capacity</label>
+      <input type="number" id="capacity" class="form-control" #serverCapacity>
+      <br>
+
+      <button class="btn btn-primary" (click)="onGetServer()">Get Servers</button>
+      <button class="btn btn-success" (click)="onSave(serverName.value,serverCapacity.value)">Save Server</button>
+      <button class="btn btn-success" (click)="onUpdate(id.value,serverName.value,serverCapacity.value)">Update Server</button>
+      <button class="btn btn-danger" (click)="onDelete(id.value)">Delete Server</button>
       <hr>
       <ul class="list-group" *ngFor="let server of servers">
-        <li class="list-group-item">{{ server.name }} (ID: {{ server.id }})</li>
+        <li class="list-group-item">{{ server.name }} (ID: {{ server.server_id }})</li>
       </ul>
     </div>
   </div>
