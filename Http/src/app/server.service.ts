@@ -16,7 +16,7 @@ export class ServerService {
       return this.http.get("http://localhost:8080/admin")
         .map(
           (response:Response) => {
-            const data = response.json()
+            const data = response.json();
             return data;
           }
         );
